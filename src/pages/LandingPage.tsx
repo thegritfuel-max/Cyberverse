@@ -8,7 +8,6 @@ import {
   Gamepad2, 
   Eye, 
   BrainCircuit, 
-  Award, 
   ArrowRight, 
   School, 
   Download, 
@@ -16,15 +15,14 @@ import {
   Monitor, 
   X, 
   Check, 
-  Cpu, 
   Lock, 
   HardDrive,
   Wifi,
   AlertTriangle,
   FileWarning,
   Activity,
-  Terminal,
-  Layers
+  Layers,
+  CheckCircle2
 } from 'lucide-react';
 import { SchoolProfile } from '../types';
 
@@ -349,30 +347,24 @@ export const LandingPage: React.FC<Props> = ({
   const triggerActualDownload = () => {
     const fileContent = `=====================================================
 CYBERVERSE: 3D CYBERSECURITY TACTICAL SIMULATOR
-Version: 2.4.0 (Windows 64-bit Edition)
-Developed for: Autonomous Engineering & STEM Education
-Academic Partner: KIT's College of Engineering Kolhapur
+Version: 2.4.0 (Windows 64-bit Standalone Edition)
+Target: Academic & Engineering Institutional Labs
+Partner Institution: KIT's College of Engineering (Autonomous), Kolhapur
 Department: Computer Science & Cybersecurity
-Faculty Supervisor: Dr. Kiran Patil
+Faculty Supervisor & HOD: Dr. Kiran Patil
 =====================================================
 
 INSTALLATION & LAUNCH INSTRUCTIONS:
-1. Extract the contents of CyberVerse_v2.4_Setup.zip to your local drive (e.g. C:\\Games\\CyberVerse).
+1. Extract CyberVerse_Game_Windows_x64.zip to your local system (e.g., C:\\CyberVerse).
 2. Ensure DirectX 11 or higher runtime is installed.
-3. Launch "CyberVerse.exe" as Administrator.
-4. When prompted, connect your webcam for real-time 60 FPS iris biometric tracking, or select "Synthetic Sensor" mode.
-5. Enter your Teacher/Student roll number to sync with the Institutional ERP Portal.
+3. Launch "CyberVerse.exe" with standard user permissions (Administrator not required).
+4. Connect standard 720p/1080p webcam for live 60 FPS iris biometric tracking or toggle Synthetic Sensor Mode.
+5. Enter student roll number or faculty access token to sync scores with the Institutional ERP portal.
 
-SYSTEM REQUIREMENTS:
-- OS: Windows 10/11 64-bit
-- Processor: Intel Core i5 / AMD Ryzen 5 or higher
-- Memory: 8 GB RAM
-- Graphics: NVIDIA GTX 1060 / AMD Radeon RX 580 or equivalent
-- DirectX: Version 11
-- Storage: 1.5 GB available space
-
-Support & Verification:
-Institutional code: KIT-CSE-2026-AUTONOMOUS
+SECURITY & PRIVACY GUARANTEE:
+- Zero raw webcam video is captured or transmitted.
+- 100% offline simulation execution supported.
+- Behavioral telemetry is computed strictly in local memory.
 =====================================================`;
 
     const blob = new Blob([fileContent], { type: 'text/plain;charset=utf-8' });
@@ -407,7 +399,7 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
               <div className="flex items-center gap-2">
                 <span className="font-black text-white text-lg sm:text-xl tracking-tight">CyberVerse</span>
                 <span className="text-[10px] font-mono font-extrabold uppercase px-2 py-0.5 bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 rounded-full tracking-wider hidden sm:inline-block">
-                  Unity 3D Defense
+                  Defense Simulator
                 </span>
               </div>
             </div>
@@ -415,14 +407,17 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
 
           {/* Navigation Links */}
           <nav className="hidden md:flex items-center gap-8 text-xs font-bold uppercase tracking-widest text-slate-300">
+            <a href="#value-props" className="hover:text-cyan-400 transition-colors">
+              Value Props
+            </a>
             <a href="#missions" className="hover:text-cyan-400 transition-colors">
-              Missions
+              Threat Missions
             </a>
             <a href="#telemetry" className="hover:text-cyan-400 transition-colors">
-              Biometrics
+              Iris Biometrics
             </a>
             <a href="#faculty" className="hover:text-cyan-400 transition-colors">
-              Institutional ERP
+              KIT Autonomous
             </a>
             <a href="#specs" className="hover:text-cyan-400 transition-colors">
               Specs
@@ -442,45 +437,45 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
               onClick={onEnterDashboard}
               className="liquid-glass-btn-purple text-white text-xs font-black uppercase tracking-wider px-6 py-2.5 rounded-full cursor-pointer flex items-center gap-2"
             >
-              <span>Portal Dashboard</span>
+              <span>Teacher Portal</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </header>
       </div>
 
-      {/* HERO SECTION: CYBERSECURITY THEME WITH LIQUID GLASS VISUAL STYLE */}
-      <section className="relative z-10 pt-16 sm:pt-24 pb-20 sm:pb-28 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center max-w-5xl mx-auto min-h-[85vh]">
+      {/* HERO SECTION: STRICT CYBERSECURITY FOCUS WITH LIQUID GLASS VISUAL STYLING */}
+      <section className="relative z-10 pt-16 sm:pt-22 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center max-w-6xl mx-auto">
         
         {/* Eyebrow Pill */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass-nav border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold tracking-widest uppercase mb-4 shadow-[0_0_20px_rgba(6,182,212,0.25)]">
           <Shield className="w-3.5 h-3.5 text-cyan-400" />
-          <span>Autonomous 3D Cybersecurity Defense Simulator</span>
+          <span>Autonomous Academic Defense Initiative • 3D Tactical Simulation</span>
         </div>
 
-        {/* Main Display Headline (Clean style from reference image with cybersecurity text) */}
+        {/* Main Display Headline */}
         <div className="space-y-4 max-w-4xl mx-auto">
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.15]">
-            Defend Against Threats In
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.12]">
+            Train Reflexes Against Modern Intrusions In
           </h1>
 
-          {/* Angled Sticker Pill */}
+          {/* Stylized Angled Sticker Capsule */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 my-2">
-            <span className="execution-ready-badge text-3xl sm:text-5xl lg:text-6xl font-black px-6 sm:px-8 py-2 sm:py-3 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-purple-300">
-              Mission-Ready
+            <span className="cyber-hero-capsule text-3xl sm:text-5xl lg:text-6xl font-black px-6 sm:px-8 py-2 sm:py-3 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-purple-300">
+              Tactical 3D
             </span>
             <span className="text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight">
               CyberVerse
             </span>
           </div>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-normal leading-relaxed pt-2">
-            An immersive 3D tactical simulator training student defenders against deceptive phishing emails, spoofed campus Wi-Fi networks, and zero-day intrusions with live biometric eye tracking.
+          <p className="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed pt-2">
+            An autonomous behavioral cybersecurity training environment designed for university engineering students. Triage deceptive spear-phishing campaigns, isolate rogue campus Wi-Fi APs, and neutralize ransomware propagation with real-time 60 FPS iris biometric telemetry.
           </p>
         </div>
 
-        {/* ONLY ONE HERO BUTTON: DOWNLOAD CYBERVERSE FOR WINDOWS */}
-        <div className="mt-10 flex flex-col items-center justify-center">
+        {/* PRIMARY HERO ACTION: SINGLE DOWNLOAD BUTTON */}
+        <div className="mt-8 flex flex-col items-center justify-center">
           <button
             onClick={handleDownloadCyberVerse}
             className="group relative px-9 sm:px-12 py-4 sm:py-5 liquid-glass-btn-purple text-white font-black text-sm sm:text-base uppercase tracking-wider rounded-full shadow-[0_0_50px_rgba(124,58,237,0.7)] hover:shadow-[0_0_75px_rgba(139,92,246,0.95)] hover:scale-105 active:scale-95 transition-all flex items-center gap-4 border border-white/30 cursor-pointer"
@@ -496,8 +491,8 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
           </button>
         </div>
 
-        {/* BOTTOM METRIC & CYBER DEFENSE BADGES */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm font-bold text-slate-300">
+        {/* HERO TRUST & INTEGRITY BADGES */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm font-bold text-slate-300">
           <button 
             onClick={() => setDemoModalOpen(true)}
             className="flex items-center gap-2 hover:text-cyan-300 transition-colors cursor-pointer"
@@ -515,8 +510,74 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
 
           <div className="flex items-center gap-2">
             <Shield className="w-4 h-4 text-cyan-400" />
-            <span>OFFLINE SCHOOL LAB READY</span>
+            <span>100% OFFLINE LAB EXECUTION</span>
           </div>
+
+          <div className="flex items-center gap-2">
+            <School className="w-4 h-4 text-purple-400" />
+            <span>KIT AUTONOMOUS ACCREDITED</span>
+          </div>
+        </div>
+
+        {/* CORE CYBERSECURITY VALUE PROPOSITIONS GRID */}
+        <div id="value-props" className="mt-14 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 text-left">
+          
+          <div className="liquid-glass-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-400 flex items-center justify-center">
+              <FileWarning className="w-5 h-5" />
+            </div>
+            <h3 className="font-bold text-white text-sm sm:text-base">Deception &amp; Phishing Defense</h3>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Exposes deceptive lookalike institutional domains, forged administrative headers, and weaponized attachments in authentic email simulations.
+            </p>
+            <div className="pt-1 flex items-center gap-1.5 text-[11px] text-purple-300 font-mono">
+              <CheckCircle2 className="w-3.5 h-3.5 text-purple-400" />
+              <span>SPF / DKIM Header Analysis</span>
+            </div>
+          </div>
+
+          <div className="liquid-glass-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
+              <Eye className="w-5 h-5" />
+            </div>
+            <h3 className="font-bold text-white text-sm sm:text-base">Live Biometric Gaze Telemetry</h3>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              60 FPS webcam-based gaze tracking calculates microsecond hesitation latency and visual scanpaths across URLs without storing raw video.
+            </p>
+            <div className="pt-1 flex items-center gap-1.5 text-[11px] text-cyan-300 font-mono">
+              <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Fixation Heatmap Engine</span>
+            </div>
+          </div>
+
+          <div className="liquid-glass-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/30 text-amber-400 flex items-center justify-center">
+              <Wifi className="w-5 h-5" />
+            </div>
+            <h3 className="font-bold text-white text-sm sm:text-base">Tactical Incident Quarantine</h3>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Interactive incident handling for rogue evil twin Wi-Fi networks, malicious drop drives, and automated network containment drills.
+            </p>
+            <div className="pt-1 flex items-center gap-1.5 text-[11px] text-amber-300 font-mono">
+              <CheckCircle2 className="w-3.5 h-3.5 text-amber-400" />
+              <span>Air-Gapping &amp; Isolation Drills</span>
+            </div>
+          </div>
+
+          <div className="liquid-glass-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-3">
+            <div className="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
+              <BrainCircuit className="w-5 h-5" />
+            </div>
+            <h3 className="font-bold text-white text-sm sm:text-base">Institutional Teacher ERP</h3>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Real-time faculty command center with student vulnerability matrices, automated academic certificate generation, and cohort leaderboards.
+            </p>
+            <div className="pt-1 flex items-center gap-1.5 text-[11px] text-emerald-300 font-mono">
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Accredited Skill Rubrics</span>
+            </div>
+          </div>
+
         </div>
 
       </section>
@@ -530,10 +591,10 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
               Interactive Tactical Scenarios
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              4 Real-World Cyber Threat Vectors
+              4 Real-World Threat Vectors Simulated In 3D
             </h2>
             <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
-              Every scenario simulates authentic deceptive mechanisms faced by students in schools and academic networks.
+              Every scenario simulates authentic deceptive mechanisms faced by students and staff across university networks.
             </p>
           </div>
 
@@ -544,7 +605,7 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
               <div className="w-11 h-11 rounded-xl bg-purple-500/20 border border-purple-500/30 text-purple-400 flex items-center justify-center shadow-md">
                 <FileWarning className="w-5 h-5" />
               </div>
-              <div className="text-[11px] font-mono font-bold text-purple-400">LEVEL 1 • TACTICAL</div>
+              <div className="text-[11px] font-mono font-bold text-purple-400">LEVEL 1 • SOCIAL ENGINEERING</div>
               <h3 className="font-bold text-white text-base">Dean Phishing Notice</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
                 Spoofed university authority email requesting immediate credential verification before exam registration lockouts.
@@ -560,7 +621,7 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
               <div className="w-11 h-11 rounded-xl bg-cyan-500/20 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shadow-md">
                 <Wifi className="w-5 h-5" />
               </div>
-              <div className="text-[11px] font-mono font-bold text-cyan-400">LEVEL 2 • NETWORK</div>
+              <div className="text-[11px] font-mono font-bold text-cyan-400">LEVEL 2 • NETWORK ATTACK</div>
               <h3 className="font-bold text-white text-base">Evil Twin Campus Wi-Fi</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
                 Rogue wireless access point broadcasting an unencrypted clone of the institution's student Wi-Fi portal.
@@ -576,7 +637,7 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
               <div className="w-11 h-11 rounded-xl bg-amber-500/20 border border-amber-500/30 text-amber-400 flex items-center justify-center shadow-md">
                 <HardDrive className="w-5 h-5" />
               </div>
-              <div className="text-[11px] font-mono font-bold text-amber-400">LEVEL 3 • PHYSICAL</div>
+              <div className="text-[11px] font-mono font-bold text-amber-400">LEVEL 3 • PHYSICAL PERIMETER</div>
               <h3 className="font-bold text-white text-base">Malicious USB Drop</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
                 Unattended thumb drive labeled "Final Exam Solutions 2026" left in the library lounge attempting autorun payload triggers.
@@ -592,7 +653,7 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
               <div className="w-11 h-11 rounded-xl bg-rose-500/20 border border-rose-500/30 text-rose-400 flex items-center justify-center shadow-md">
                 <Lock className="w-5 h-5" />
               </div>
-              <div className="text-[11px] font-mono font-bold text-rose-400">LEVEL 4 • ADVANCED</div>
+              <div className="text-[11px] font-mono font-bold text-rose-400">LEVEL 4 • ADVANCED INCIDENT</div>
               <h3 className="font-bold text-white text-base">Ransomware Quarantine</h3>
               <p className="text-xs text-slate-400 leading-relaxed">
                 Simulated encrypted file payload execution requiring emergency network isolation and credential rotation.
@@ -619,11 +680,11 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
               </div>
 
               <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-                Evaluating Instincts, Not Just Right Answers
+                Evaluating Instincts, Not Just Guesswork
               </h2>
 
               <p className="text-sm text-slate-300 leading-relaxed">
-                Standard multiple-choice quizzes fail to capture whether a student genuinely detected a threat or merely guessed. CyberVerse reads physical iris fixation vectors:
+                Standard multiple-choice quizzes fail to capture whether a student genuinely spotted deceptive indicators or simply guessed correctly. CyberVerse tracks continuous biometric vectors:
               </p>
 
               <div className="space-y-3 text-xs text-slate-300">
@@ -631,7 +692,7 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
                   <BrainCircuit className="w-4 h-4 text-purple-400 mt-0.5 shrink-0" />
                   <div>
                     <span className="font-bold text-white block">URL Gaze Duration</span>
-                    <span>Measures if the student checked the sender address before clicking links.</span>
+                    <span>Measures whether the student checked the sender address domain and TLS lock before clicking links.</span>
                   </div>
                 </div>
 
@@ -639,7 +700,7 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
                   <Activity className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
                   <div>
                     <span className="font-bold text-white block">Hesitation Latency Score</span>
-                    <span>Quantifies micro-second cognitive hesitation when encountering deceptive prompts.</span>
+                    <span>Quantifies microsecond cognitive hesitation when encountering spoofed prompts or unexpected dialogs.</span>
                   </div>
                 </div>
 
@@ -647,18 +708,25 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
                   <Layers className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
                   <div>
                     <span className="font-bold text-white block">Visual Scanpath Mapping</span>
-                    <span>Reconstructs the eye movement journey across spoofed security dialogs.</span>
+                    <span>Reconstructs eye movement journeys across deceptive security dialogs for post-simulation student debriefs.</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-wrap gap-3">
                 <button
                   onClick={onOpenEyeTracking}
                   className="px-6 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs uppercase tracking-wider rounded-xl inline-flex items-center gap-2 transition-all shadow-lg shadow-cyan-600/30 cursor-pointer"
                 >
                   <Eye className="w-4 h-4" />
-                  <span>Launch Live Eye-Tracking Lab</span>
+                  <span>Launch Live Gaze Lab</span>
+                </button>
+                <button
+                  onClick={onEnterDashboard}
+                  className="px-6 py-3 bg-purple-600/30 hover:bg-purple-600/50 text-purple-200 border border-purple-500/40 font-bold text-xs uppercase tracking-wider rounded-xl inline-flex items-center gap-2 transition-all cursor-pointer"
+                >
+                  <span>Teacher ERP Portal</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -798,7 +866,7 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
                 className="px-5 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs rounded-xl flex items-center gap-2 transition-all shadow-md cursor-pointer"
               >
                 <Eye className="w-4 h-4" />
-                <span>Open Eye-Tracking Lab</span>
+                <span>Open Gaze Lab</span>
               </button>
               <button
                 onClick={onEnterDashboard}
@@ -812,88 +880,113 @@ Institutional code: KIT-CSE-2026-AUTONOMOUS
         </div>
       </section>
 
-      {/* NORMAL CLEAN INSTITUTIONAL FOOTER (NO CROWD ANIMATION) */}
-      <footer className="relative z-10 bg-[#04060d] text-slate-400 py-16 border-t border-slate-800 text-xs">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      {/* STANDARD CLEAN PROFESSIONAL FOOTER DESIGN */}
+      <footer className="relative z-10 bg-[#070913] text-slate-300 border-t border-slate-800/80 pt-16 pb-12 text-xs">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          {/* Top Footer Row: Brand, Accreditation & Navigation Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 pb-12 border-b border-slate-800/80">
             
-            {/* Column 1: Brand & Autonomous Identity */}
+            {/* Brand and Accreditation Column */}
             <div className="lg:col-span-2 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-500 text-white flex items-center justify-center shadow-lg">
+                <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-500 text-white flex items-center justify-center shadow-lg shadow-purple-900/30">
                   <Shield className="w-5 h-5 text-cyan-200" />
                 </div>
                 <div>
                   <span className="font-bold text-white text-base tracking-tight block">CyberVerse</span>
-                  <span className="text-[11px] text-slate-400">Tactical 3D Cybersecurity Simulator</span>
+                  <span className="text-[11px] text-slate-400">Autonomous Cybersecurity Defense Simulator</span>
                 </div>
               </div>
 
               <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
-                Empowering next-generation cybersecurity defenders with real-world Unity 3D threat environments, gaze biometric telemetry, and automated institutional teacher analytics.
+                Next-generation 3D behavioral cybersecurity training platform equipped with 60 FPS iris biometric tracking and automated teacher analytics.
               </p>
 
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-[11px] text-purple-300">
-                <School className="w-3.5 h-3.5" />
-                <span>KIT's College of Engineering (Autonomous), Kolhapur</span>
+              <div className="space-y-2 pt-1">
+                <div className="flex items-center gap-2 text-[11px] text-slate-300">
+                  <School className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                  <span>KIT's College of Engineering (Autonomous), Kolhapur</span>
+                </div>
+                <div className="flex items-center gap-2 text-[11px] text-slate-400">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+                  <span>Supervisor &amp; HOD: Dr. Kiran Patil</span>
+                </div>
+              </div>
+
+              {/* Status Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-emerald-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>All 4 Simulation Threat Vectors Operational</span>
               </div>
             </div>
 
-            {/* Column 2: In-Game Missions */}
+            {/* Column 1: Tactical Simulations */}
             <div className="space-y-3">
               <h4 className="font-bold text-white text-xs uppercase tracking-wider">Tactical Missions</h4>
-              <ul className="space-y-2 text-xs text-slate-400">
+              <ul className="space-y-2.5 text-xs text-slate-400">
                 <li><a href="#missions" className="hover:text-cyan-400 transition-colors">Dean Phishing Notice</a></li>
                 <li><a href="#missions" className="hover:text-cyan-400 transition-colors">Evil Twin Wi-Fi Portal</a></li>
                 <li><a href="#missions" className="hover:text-cyan-400 transition-colors">Malicious USB Drop</a></li>
                 <li><a href="#missions" className="hover:text-cyan-400 transition-colors">Ransomware Quarantine</a></li>
-                <li><a href="#missions" className="hover:text-cyan-400 transition-colors">Zero-Day Injection</a></li>
+                <li><a href="#missions" className="hover:text-cyan-400 transition-colors">Credential Harvester Drill</a></li>
               </ul>
             </div>
 
-            {/* Column 3: Biometrics & Analytics */}
+            {/* Column 2: Biometric Telemetry */}
             <div className="space-y-3">
-              <h4 className="font-bold text-white text-xs uppercase tracking-wider">Telemetry &amp; ERP</h4>
-              <ul className="space-y-2 text-xs text-slate-400">
-                <li><button onClick={onOpenEyeTracking} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Live Eye-Tracking Lab</button></li>
-                <li><button onClick={onEnterDashboard} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Teacher Analytics Portal</button></li>
-                <li><button onClick={onEnterDashboard} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Student Skill Matrix</button></li>
-                <li><button onClick={onEnterDashboard} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Automated Certificates</button></li>
-                <li><button onClick={onEnterDashboard} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Hesitation Latency Scoring</button></li>
+              <h4 className="font-bold text-white text-xs uppercase tracking-wider">Iris Biometrics</h4>
+              <ul className="space-y-2.5 text-xs text-slate-400">
+                <li><button onClick={onOpenEyeTracking} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Live Gaze Tracking Lab</button></li>
+                <li><button onClick={onOpenEyeTracking} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Hesitation Latency Score</button></li>
+                <li><button onClick={onOpenEyeTracking} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Fixation Scanpath Replay</button></li>
+                <li><button onClick={onOpenEyeTracking} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Visual Vigilance Index</button></li>
+                <li><button onClick={onOpenEyeTracking} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Webcam Sensor Calibration</button></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Teacher ERP Portal */}
+            <div className="space-y-3">
+              <h4 className="font-bold text-white text-xs uppercase tracking-wider">Teacher ERP Portal</h4>
+              <ul className="space-y-2.5 text-xs text-slate-400">
+                <li><button onClick={onEnterDashboard} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Teacher Command Center</button></li>
+                <li><button onClick={onEnterDashboard} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Student Cohort Directory</button></li>
+                <li><button onClick={onEnterDashboard} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Skill Matrix Benchmarks</button></li>
+                <li><button onClick={onEnterDashboard} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Automated Certificate Hub</button></li>
+                <li><button onClick={onEnterDashboard} className="hover:text-cyan-400 transition-colors text-left cursor-pointer">Leaderboard &amp; Ranking</button></li>
               </ul>
             </div>
 
             {/* Column 4: Platform & Support */}
             <div className="space-y-3">
-              <h4 className="font-bold text-white text-xs uppercase tracking-wider">Download &amp; Specs</h4>
-              <ul className="space-y-2 text-xs text-slate-400">
+              <h4 className="font-bold text-white text-xs uppercase tracking-wider">Platform &amp; Specs</h4>
+              <ul className="space-y-2.5 text-xs text-slate-400">
                 <li>
                   <button onClick={handleDownloadCyberVerse} className="text-cyan-400 hover:text-cyan-300 font-semibold cursor-pointer">
                     Windows 64-bit Game (.zip)
                   </button>
                 </li>
-                <li><span>DirectX 11 Runtime</span></li>
-                <li><span>Standard Webcam 60 FPS</span></li>
-                <li><span>Institutional Lab Mode</span></li>
-                <li><span>Dr. Kiran Patil Research Lab</span></li>
+                <li><a href="#specs" className="hover:text-slate-200 transition-colors">DirectX 11 Hardware Specs</a></li>
+                <li><a href="#specs" className="hover:text-slate-200 transition-colors">Offline Academic Lab Mode</a></li>
+                <li><a href="#faculty" className="hover:text-slate-200 transition-colors">KIT Autonomous Syllabus</a></li>
+                <li><a href="#faculty" className="hover:text-slate-200 transition-colors">Dr. Kiran Patil Research Lab</a></li>
               </ul>
             </div>
 
           </div>
 
-          {/* Sub-Footer Bar */}
-          <div className="pt-8 border-t border-slate-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
+          {/* Bottom Sub-Footer: Copyright, Privacy & Institutional Notice */}
+          <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] text-slate-400">
             <div>
-              &copy; {new Date().getFullYear()} CyberVerse. Kolhapur Institute of Technology's College of Engineering (Autonomous).
+              &copy; {new Date().getFullYear()} CyberVerse Simulator. Kolhapur Institute of Technology's College of Engineering (Empowered Autonomous). All rights reserved.
             </div>
 
-            <div className="flex items-center gap-6">
-              <span>Department of Computer Science &amp; Cybersecurity</span>
+            <div className="flex flex-wrap items-center gap-6">
+              <span className="hover:text-slate-300 cursor-pointer">Student Data Privacy Standard</span>
               <span>•</span>
-              <span>Supervision: Dr. Kiran Patil</span>
+              <span className="hover:text-slate-300 cursor-pointer">Zero Cloud Telemetry Retention</span>
               <span>•</span>
-              <span className="text-emerald-400 font-mono">System Status: All Sensors Online</span>
+              <span className="text-purple-400 font-mono">Build v2.4.0 (Windows x64)</span>
             </div>
           </div>
 
