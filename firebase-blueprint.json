@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Stored information about a founder user.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Unique identifier for the user." },
+        "email": { "type": "string", "format": "email", "description": "User's email address." },
+        "displayName": { "type": "string", "description": "User's display name." },
+        "startupStage": { "type": "string", "enum": ["idea", "mvp", "growth", "scale"], "description": "Current stage of the startup." },
+        "plan": { "type": "string", "enum": ["free", "starter", "pro"], "description": "Subscription plan." },
+        "createdAt": { "type": "number", "description": "Timestamp of creation." }
+      },
+      "required": ["uid", "email", "displayName", "startupStage", "plan", "createdAt"]
+    },
+    "StartupIdea": {
+      "title": "Startup Idea",
+      "description": "A startup project created by a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "UID of the owner." },
+        "idea": { "type": "string", "description": "The startup idea description." },
+        "analysis": { "type": "object", "description": "AI generated analysis." },
+        "marketResearch": { "type": "object", "description": "AI generated market research." },
+        "financeModel": { "type": "object", "description": "AI generated financial model." },
+        "roadmap": { "type": "object", "description": "AI generated execution roadmap." },
+        "createdAt": { "type": "number", "description": "Timestamp of creation." }
+      },
+      "required": ["userId", "idea", "createdAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Private user profiles."
+    },
+    "startups/{startupId}": {
+      "schema": "StartupIdea",
+      "description": "User-owned startup projects."
+    }
+  }
+}

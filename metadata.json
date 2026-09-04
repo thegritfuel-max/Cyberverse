@@ -1,0 +1,10 @@
+{
+  "name": "CyberVerse - Teacher Cybersecurity ERP & Simulation Hub",
+  "description": "Comprehensive cybersecurity awareness simulation game portal and school teacher analytics ERP with behavioural eye-tracking telemetry, student skill profiles, and automated certificates.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
